@@ -55,6 +55,39 @@ const projects = [
     github: "https://github.com/DharshiniManivannan16/AI-Stock-Market-Prediction",
 
     demo: "https://stockvision-ai-a7e55.web.app"
+  },
+
+  {
+    title: "Workforce Intelligence: Employee Attrition Analytics",
+
+    description:
+      "An interactive Power BI dashboard that analyzes employee attrition patterns and workforce trends to support data-driven HR decision-making.",
+
+    tech: [
+      "DAX",
+      "Power BI",
+      "Power Query",
+      "Microsoft Excel",
+      "Data Cleaning",
+      "Data Visualization",
+      "HR Analytics",
+      "Business Intelligence"
+    ],
+
+
+    features: [
+      "Employee Attrition Analysis",
+      "Department-wise Workforce Insights",
+      "Job Satisfaction Monitoring",
+      "Interactive KPI Dashboard",
+      "Dynamic Filtering & Drill-Down Analysis"
+    ],
+
+    image: "/project3.jpeg",
+
+    github: "https://github.com/DharshiniManivannan16/workforce-intelligence-employee-attrition-analytics",
+
+    demo: "https://portfolio-2c856.web.app/"
   }
 
 ]
