@@ -1,12 +1,204 @@
 @import "tailwindcss";
 
-html{
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96B;
+  --gold-pale: #F5E6B8;
+  --gold-dark: #8B6914;
+  --white: #FFFFFF;
+  --off-white: #FAF9F6;
+  --cream: #F7F3EA;
+  --gray-100: #F4F4F4;
+  --gray-200: #E8E8E8;
+  --gray-400: #9A9A9A;
+  --gray-600: #5A5A5A;
+  --gray-800: #2A2A2A;
+  --black: #0A0A0A;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(201, 168, 76, 0.25);
+  --shadow-gold: 0 8px 40px rgba(201, 168, 76, 0.18);
+  --shadow-deep: 0 20px 80px rgba(0, 0, 0, 0.10);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-ui: 'Space Grotesk', sans-serif;
+  --radius: 16px;
+  --radius-sm: 8px;
+  --radius-lg: 24px;
+}
+
+/* Dark Mode Variables */
+html[data-theme="dark"] {
+  --off-white: #020617; /* Very dark slate background */
+  --cream: #1e1b12; /* Dark gold-tinted cream background */
+  --white: #0f172a; /* Slate 900 background */
+  --gray-100: #1e293b;
+  --gray-200: #334155;
+  --gray-400: #64748b;
+  --gray-600: #94a3b8;
+  --gray-800: #f8fafc; /* Inverted body color (white text) */
+  --black: #f8fafc;
+  --glass-bg: rgba(15, 23, 42, 0.75);
+  --glass-border: rgba(201, 168, 76, 0.45);
+  --shadow-deep: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-body{
-  background: #020617;
-  color: white;
-  font-family: sans-serif;
+body {
+  font-family: var(--font-body);
+  background: var(--off-white);
+  color: var(--gray-800);
   overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* Custom Cursor (Desktops only) */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"], input, textarea, select {
+    cursor: none;
+  }
+}
+
+#cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s, background 0.2s;
+  mix-blend-mode: difference;
+}
+
+#cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0.6;
+}
+
+#mouse-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.7);
+    opacity: 0.4;
+  }
+}
+
+@keyframes floatGlow {
+  from { transform: translate(0, 0); }
+  to { transform: translate(60px, 40px); }
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Typography styles matching gencode.tech */
+.display-font {
+  font-family: var(--font-display);
+}
+.ui-font {
+  font-family: var(--font-ui);
+}
+.body-font {
+  font-family: var(--font-body);
 }

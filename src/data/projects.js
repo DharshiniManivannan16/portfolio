@@ -25,7 +25,8 @@ const projects = [
 
     github: "https://github.com/DharshiniManivannan16/AI-resume-analyzer",
 
-    demo: "https://ai-resume-analyzer-5bb5f.web.app/"
+    demo: "https://ai-resume-analyzer-5bb5f.web.app/",
+    category: "web"
   },
 
   {
@@ -54,7 +55,8 @@ const projects = [
 
     github: "https://github.com/DharshiniManivannan16/AI-Stock-Market-Prediction",
 
-    demo: "https://stockvision-ai-a7e55.web.app"
+    demo: "https://stockvision-ai-a7e55.web.app",
+    category: "ai"
   },
 
   {
@@ -87,7 +89,8 @@ const projects = [
 
     github: "https://github.com/DharshiniManivannan16/workforce-intelligence-employee-attrition-analytics",
 
-    demo: "https://portfolio-2c856.web.app/"
+    demo: "https://portfolio-2c856.web.app/",
+    category: "data"
   }
 
 ]

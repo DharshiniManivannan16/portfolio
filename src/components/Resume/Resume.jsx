@@ -1,36 +1,26 @@
 const Resume = () => {
   return (
-
-    <section className="py-24 px-6">
-
-      <div className="max-w-4xl mx-auto text-center">
-
-        <h2 className="text-5xl font-bold mb-8">
-          Resume
-        </h2>
-
-        <p className="text-gray-400 text-lg mb-10">
-
-          Download my professional resume to know
-          more about my skills, projects, and experience.
-
+    <section className="py-24 px-6 md:px-12 bg-white dark:bg-slate-900 transition-colors duration-300">
+      <div className="max-w-4xl mx-auto text-center reveal">
+        <p className="ui-font text-[11px] font-bold tracking-[0.16em] text-[var(--gold)] uppercase mb-3">
+          Qualifications
         </p>
-
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-800 dark:text-slate-100 display-font leading-tight mb-6">
+          My Resume
+        </h2>
+        <p className="text-slate-500 dark:text-slate-400 font-light body-font text-sm leading-relaxed mb-10 max-w-lg mx-auto">
+          Download my professional curriculum vitae to review my academic history, internship experience, and structural capabilities.
+        </p>
         <a
-          href="/resume.pdf"
+          href="/Dharshini_M_resume.pdf"
           download
-          className="bg-blue-500 hover:bg-blue-600 transition px-8 py-4 rounded-2xl font-semibold shadow-lg"
+          className="inline-block bg-gradient-to-r from-[var(--gold-light)] to-[var(--gold-dark)] text-white font-semibold ui-font text-xs uppercase tracking-wider px-8 py-3.5 rounded-full shadow-[0_4px_15px_rgba(201,168,76,0.25)] hover:shadow-[0_6px_20px_rgba(201,168,76,0.45)] hover:translate-y-[-2px] transition-all duration-300 select-none cursor-none"
         >
-
-          Download Resume
-
+          Download CV / Resume
         </a>
-
       </div>
-
     </section>
+  );
+};
 
-  )
-}
-
-export default Resume
+export default Resume;

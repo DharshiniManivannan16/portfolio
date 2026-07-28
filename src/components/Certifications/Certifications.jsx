@@ -1,101 +1,102 @@
 const Certifications = () => {
+  const certificationsData = [
+    {
+      title: "Oracle Cloud Infrastructure 2025",
+      subtitle: "AI Foundation Associate Certification",
+      desc: "Validation of fundamental concepts in Artificial Intelligence, including machine learning models, neural networks, deep learning, and generative AI services deployed within the Oracle Cloud infrastructure.",
+      year: "2025",
+    },
+    {
+      title: "MongoDB AI & Vector Search",
+      subtitle: "Introduction to AI and Vector Search",
+      desc: "Specialized training focusing on vector databases, semantic searches, embeddings generation, and building AI applications with RAG architectures.",
+      year: "2025",
+    },
+    {
+      title: "EBPL Internship on GEN AI",
+      subtitle: "Generative AI Internship Program",
+      desc: "Practical hands-on internship concentrating on Large Language Models, prompt crafting strategies, model API integration, and agentic workflows.",
+      year: "2024",
+    },
+    {
+      title: "Data Analytics with Python Certificate (FCC)",
+      subtitle: "Data Analytics with Python Certificate",
+      desc: "Professional certification for data analytics using Python, including data manipulation, statistical analysis, and data visualization using libraries such as Pandas, NumPy, Matplotlib, and Seaborn.",
+      year: "2025",
+    },
+  ];
+
   return (
+    <section className="py-24 px-6 md:px-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+      <div className="max-w-5xl mx-auto">
 
-    <section className="py-24 px-6">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-20 reveal">
+          <p className="ui-font text-[11px] font-bold tracking-[0.16em] text-[var(--gold)] uppercase mb-3">
+            Achievements
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-800 dark:text-slate-100 display-font leading-tight mb-6">
+            Certifications & Training
+          </h2>
+          <p className="text-slate-500 dark:text-slate-400 font-light body-font text-sm leading-relaxed">
+            A chronological timeline of my professional accomplishments, academic credentials, and specialized technical certifications.
+          </p>
+        </div>
 
-      <div className="max-w-6xl mx-auto">
+        {/* Timeline Wrap */}
+        <div className="relative max-w-3xl mx-auto">
+          {/* Vertical Timeline Central Line (Visible on md and up) */}
+          <div className="absolute left-[14px] md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[var(--gold)] to-transparent -translate-x-1/2"></div>
 
-        {/* Heading */}
+          {/* Timeline Items */}
+          <div className="space-y-12">
+            {certificationsData.map((cert, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div
+                  key={index}
+                  className={`flex flex-col md:flex-row relative items-start ${isEven ? "md:flex-row-reverse" : ""
+                    }`}
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-[14px] md:left-1/2 top-8 w-3.5 h-3.5 rounded-full bg-[var(--gold)] border-2 border-white dark:border-slate-950 shadow-[0_0_0_3px_var(--gold)] -translate-x-1/2 z-10"></div>
 
-        <h2 className="text-5xl font-bold text-center mb-16">
+                  {/* Left Column Spacer (Forces alternate sides on desktop) */}
+                  <div className="hidden md:block w-1/2"></div>
 
-          Certifications
+                  {/* Card Content Column */}
+                  <div className="w-full md:w-1/2 pl-10 md:pl-0 md:px-8 reveal">
+                    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[var(--radius)] p-6 shadow-[var(--shadow-deep)] hover:border-[var(--gold)] hover:shadow-[var(--shadow-gold)] hover:translate-y-[-2px] transition-all duration-300">
+                      {/* Year badge */}
+                      <span className="display-font text-xl font-bold text-[var(--gold)] tracking-wide block mb-1">
+                        {cert.year}
+                      </span>
 
-        </h2>
+                      {/* Title */}
+                      <h3 className="ui-font text-sm font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wide mb-1">
+                        {cert.title}
+                      </h3>
 
-        {/* Grid */}
+                      {/* Subtitle */}
+                      <h4 className="text-[11px] font-semibold text-slate-400 dark:text-slate-500 tracking-wider uppercase mb-3">
+                        {cert.subtitle}
+                      </h4>
 
-        <div className="grid md:grid-cols-2 gap-8">
-
-          {/* Card 1 */}
-
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl p-8">
-
-            <h3 className="text-2xl font-semibold text-blue-400">
-
-              Oracle Cloud Infrastructure 2025
-
-            </h3>
-
-            <p className="text-gray-400 mt-4">
-
-              AI Foundation Associate Certification
-
-            </p>
-
+                      {/* Description */}
+                      <p className="text-[12px] text-slate-500 dark:text-slate-400 leading-relaxed font-light body-font">
+                        {cert.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-
-          {/* Card 2 */}
-
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl p-8">
-
-            <h3 className="text-2xl font-semibold text-blue-400">
-
-              MongoDB AI & Vector Search
-
-            </h3>
-
-            <p className="text-gray-400 mt-4">
-
-              Introduction to AI and Vector Search
-
-            </p>
-
-          </div>
-
-          {/* Card 3 */}
-
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl p-8">
-
-            <h3 className="text-2xl font-semibold text-blue-400">
-
-              EBPL Internship on GEN AI
-
-            </h3>
-
-            <p className="text-gray-400 mt-4">
-
-              Generative AI Internship Program
-
-            </p>
-
-          </div>
-
-          {/* Card 4 */}
-
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl p-8">
-
-            <h3 className="text-2xl font-semibold text-blue-400">
-
-              MS Office 2024
-
-            </h3>
-
-            <p className="text-gray-400 mt-4">
-
-              Productivity and Office Tools Certification
-
-            </p>
-
-          </div>
-
         </div>
 
       </div>
-
     </section>
+  );
+};
 
-  )
-}
-
-export default Certifications
+export default Certifications;
